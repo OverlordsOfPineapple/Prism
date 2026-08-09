@@ -1,0 +1,8 @@
+/* Component extension point for cards, dialogs and controls. */
+
+/* Sprint 002: studio branding */
+.studio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.studio-card{min-height:92px;padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);display:grid;place-items:center;gap:10px;text-align:center}
+.studio-card img{max-width:120px;max-height:42px;width:auto;height:auto;object-fit:contain;filter:grayscale(1) brightness(1.8);opacity:.9}
+.studio-card span{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#fff;color:#07070a;font-weight:800}
+.studio-card strong{font-size:.78rem;line-height:1.25;color:#d7d6dc}

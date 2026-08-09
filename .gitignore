@@ -1,0 +1,30 @@
+*.pid
+*.port
+*.log
+*.tmp
+*.bak
+*.backup*
+*~
+node_modules/
+dist/
+build/
+
+# Runtime
+*.pid
+*.port
+*.log
+
+# Backups
+*.bak
+*.backup*
+*.old
+*~
+
+# Reports
+reports/
+
+# Release artifacts
+release/
+
+# Archives
+*.zip

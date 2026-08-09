@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';
+import { mapTmdbDetails, mapTmdbSummary } from '../prism-core/connectors/tmdb/mapper.js';
+const summary=mapTmdbSummary({id:1,title:'Test',release_date:'2026-07-01',genre_ids:[878],vote_average:7.5},0);assert.equal(summary.title,'Test');assert.equal(summary.year,2026);assert.equal(summary.genre,'Science Fiction');
+const details=mapTmdbDetails({id:1,title:'Test',release_date:'2026-07-01',runtime:100,genres:[{name:'Drama'}],credits:{crew:[{job:'Director',name:'A'}],cast:[{id:2,name:'B',character:'C'}]},videos:{results:[{site:'YouTube',type:'Trailer',official:true,key:'abc'}]},'watch/providers':{results:{AU:{flatrate:[{provider_id:9,provider_name:'Stream',logo_path:'/x.png'}]}}},recommendations:{results:[]},similar:{results:[]},release_dates:{results:[{iso_3166_1:'AU',release_dates:[{certification:'M'}]}]}});assert.equal(details.director,'A');assert.equal(details.classification,'M');assert.equal(details.trailerId,'abc');assert.equal(details.providersList[0].name,'Stream');assert.equal(details.enriched,true);
+console.log('TMDb mapper tests passed.');

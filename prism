@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+while true
+do
+clear
+
+echo "================================="
+echo "      PRISM ENGINEERING"
+echo "================================="
+echo
+echo "1) Backup"
+echo "2) Audit"
+echo "3) Quality Check"
+echo "4) Exit"
+echo
+read -rp "Choice: " c
+
+case "$c" in
+
+1)
+./tools/prism-backup.sh
+read -n1
+;;
+
+2)
+./tools/js-audit.sh | tee reports/js-audit.txt
+read -n1
+;;
+
+3)
+./tools/prism-check.sh
+read -n1
+;;
+
+4)
+exit
+;;
+
+*)
+;;
+
+esac
+
+done

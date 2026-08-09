@@ -1,0 +1,6 @@
+import { Movie } from '../models/Movie.js';
+export function normalizeDemoMovie(item){
+  const providerNames=(item.providers||[]).map(p=>typeof p==='string'?{name:p,logo:''}:p);
+  return new Movie({basic:{id:item.id,title:item.title,overview:item.overview,releaseDate:item.release,year:item.year,classification:item.classification,runtimeMinutes:parseRuntime(item.runtime),genres:String(item.genre||'').split(/\s*·\s*|\s{2,}/).filter(Boolean)},artwork:{poster:item.poster,backdrop:item.backdrop},credits:{director:item.director,cast:Array.isArray(item.cast)?item.cast:String(item.cast||'').split(',').map(name=>({name:name.trim()})).filter(x=>x.name),studios:item.studios||[]},providers:{region:'AU',streaming:providerNames,link:item.providerLink||''},ratings:{tmdb:Number(item.imdb)||null,voteCount:item.voteCount||0,popularity:item.popularity||0},media:{trailerId:item.trailerId||item.youtubeId||''},similar:item.similar||[],discovery:{rows:item.rows||[]},meta:{source:item.source||'demo',enriched:item.enriched??true}})
+}
+function parseRuntime(value){if(typeof value==='number')return value;const h=Number(String(value).match(/(\d+)h/)?.[1]||0),m=Number(String(value).match(/(\d+)m/)?.[1]||0);return h*60+m||null}
