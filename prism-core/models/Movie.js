@@ -37,6 +37,9 @@ export class Movie {
       region: input.providers?.region ?? 'AU',
       link: input.providers?.link ?? input.providerLink ?? '',
       streaming: freezeArray(input.providers?.streaming ?? input.streamingProviders ?? input.providers),
+      subscription: freezeArray(input.providers?.subscription),
+      free: freezeArray(input.providers?.free),
+      ads: freezeArray(input.providers?.ads),
       rent: freezeArray(input.providers?.rent),
       buy: freezeArray(input.providers?.buy),
     });

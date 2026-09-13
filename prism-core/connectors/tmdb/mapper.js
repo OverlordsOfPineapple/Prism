@@ -15,6 +15,9 @@ export function mapTmdbDetails(item,{region='AU'}={}){
   const credits=item.credits||{}, providers=item['watch/providers']?.results?.[region]||{}, videos=item.videos?.results||[];
   const unique=list=>[...new Map((list||[]).map(p=>[p.provider_id,p])).values()];
   const provider=(p,type)=>new Provider({id:p.provider_id,name:p.provider_name,logo:image(p.logo_path,'w185'),type});
+  const subscription=unique(providers.flatrate).map(p=>provider(p,'streaming'));
+  const free=unique(providers.free).map(p=>provider(p,'free'));
+  const ads=unique(providers.ads).map(p=>provider(p,'ads'));
   const streaming=unique([...(providers.flatrate||[]),...(providers.free||[]),...(providers.ads||[])]).map(p=>provider(p,'streaming'));
   const rec=(item.recommendations?.results||[]).slice(0,6).map(mapTmdbSummary);
   const sim=(item.similar?.results||[]).slice(0,6).map(mapTmdbSummary);
@@ -23,7 +26,7 @@ export function mapTmdbDetails(item,{region='AU'}={}){
     basic:{id:item.id,title:item.title||item.original_title,originalTitle:item.original_title,overview:item.overview,releaseDate:date,year:date?Number(date.slice(0,4)):null,runtimeMinutes:item.runtime||null,classification:releaseCert(item.release_dates,region),genres:(item.genres||[]).map(g=>g.name),language:item.original_language,status:item.status},
     artwork:{poster:image(item.poster_path,'w780'),backdrop:image(item.backdrop_path,'original')||image(item.poster_path,'original'),posters:(item.images?.posters||[]).slice(0,12).map(x=>image(x.file_path,'w780')),backdrops:(item.images?.backdrops||[]).slice(0,12).map(x=>image(x.file_path,'original')),logos:(item.images?.logos||[]).slice(0,6).map(x=>image(x.file_path,'w500'))},
     credits:{director:credits.crew?.find(p=>p.job==='Director')?.name||'Not listed',cast:(credits.cast||[]).slice(0,10).map(p=>new Person({id:p.id,name:p.name,character:p.character,photo:image(p.profile_path,'h632')})),crew:(credits.crew||[]).map(p=>new Person({id:p.id,name:p.name,job:p.job,department:p.department,photo:image(p.profile_path,'h632')})),studios:(item.production_companies||[]).slice(0,6).map(c=>({id:c.id,name:c.name,logo:image(c.logo_path,'w300')}))},
-    providers:{region,link:providers.link||'',streaming,rent:unique(providers.rent).map(p=>provider(p,'rent')),buy:unique(providers.buy).map(p=>provider(p,'buy'))},
+    providers:{region,link:providers.link||'',streaming,subscription,free,ads,rent:unique(providers.rent).map(p=>provider(p,'rent')),buy:unique(providers.buy).map(p=>provider(p,'buy'))},
     ratings:{tmdb:item.vote_average||null,voteCount:item.vote_count||0,popularity:item.popularity||0},
     media:{trailerId:trailer(videos)?.key||'',videos}, recommendations:rec, similar:sim,
     collection:item.belongs_to_collection||null, external:item.external_ids||{}, release:item.release_dates||{}, statistics:{budget:item.budget||0,revenue:item.revenue||0},
