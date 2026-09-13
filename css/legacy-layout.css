@@ -87,3 +87,53 @@
   width: 100%;
   height: 100%;
 }
+
+
+/* Free TV Australia — Phase 2 */
+.poster-btn {
+  position: relative;
+}
+.free-tv-badge {
+  position: absolute;
+  z-index: 2;
+  top: .65rem;
+  left: .65rem;
+  padding: .35rem .5rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,.82);
+  color: #fff;
+  font-size: .64rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  line-height: 1;
+}
+.free-tv-launcher {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .55rem;
+  margin-top: .8rem;
+}
+.free-tv-launcher > span {
+  font-size: .72rem;
+  font-weight: 800;
+  opacity: .72;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.free-tv-launcher a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: .45rem .7rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: inherit;
+  text-decoration: none;
+  font-size: .78rem;
+  font-weight: 750;
+}
+.free-tv-launcher a:hover,
+.free-tv-launcher a:focus-visible {
+  transform: translateY(-1px);
+}
