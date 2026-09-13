@@ -80,20 +80,35 @@
       <div class="discovery-panel" id="discoveryPanel" hidden>
         <div class="discovery-section">
           <div class="discovery-label">Streaming service</div>
-          <div class="service-strip" aria-label="Streaming services">
-            <button class="service service-all active" data-service="All" type="button" aria-label="Show all streaming services" title="All services"><span aria-hidden="true">✦</span></button>
-            <button class="service service-free-tv" data-service="Free TV" type="button" aria-label="Show free Australian streaming services" title="Free TV"><span aria-hidden="true">FREE</span></button>
-            <a class="service service-free-tv" data-service="ABC iview" href="https://iview.abc.net.au/" target="_blank" rel="noopener noreferrer" aria-label="Filter by ABC iview and open ABC iview" title="ABC iview"><span aria-hidden="true">ABC</span></a>
-            <a class="service service-free-tv" data-service="7plus" href="https://7plus.com.au/" target="_blank" rel="noopener noreferrer" aria-label="Filter by 7plus and open 7plus" title="7plus"><span aria-hidden="true">7+</span></a>
-            <a class="service service-free-tv" data-service="9Now" href="https://www.9now.com.au/" target="_blank" rel="noopener noreferrer" aria-label="Filter by 9Now and open 9Now" title="9Now"><span aria-hidden="true">9</span></a>
-            <a class="service service-free-tv" data-service="SBS On Demand" href="https://www.sbs.com.au/ondemand/" target="_blank" rel="noopener noreferrer" aria-label="Filter by SBS On Demand and open SBS On Demand" title="SBS On Demand"><span aria-hidden="true">SBS</span></a>
-            <a class="service service-free-tv" data-service="10" href="https://10.com.au/" target="_blank" rel="noopener noreferrer" aria-label="Filter by 10 and open 10" title="10"><span aria-hidden="true">10</span></a>
-            <a class="service service-logo" data-service="Netflix" href="https://www.netflix.com/au/" target="_blank" rel="noopener noreferrer" aria-label="Filter by Netflix and open Netflix" title="Netflix"><img src="assets/providers/netflix.svg" alt="" width="48" height="48"></a>
-            <a class="service service-logo" data-service="Disney+" href="https://www.disneyplus.com/en-au" target="_blank" rel="noopener noreferrer" aria-label="Filter by Disney Plus and open Disney Plus" title="Disney+"><img src="assets/providers/disney-plus.svg" alt="" width="48" height="48"></a>
-            <a class="service service-logo" data-service="Prime Video" href="https://www.primevideo.com/" target="_blank" rel="noopener noreferrer" aria-label="Filter by Prime Video and open Prime Video" title="Prime Video"><img src="assets/providers/prime-video.svg" alt="" width="48" height="48"></a>
-            <a class="service service-logo" data-service="Binge" href="https://binge.com.au/" target="_blank" rel="noopener noreferrer" aria-label="Filter by Binge and open Binge" title="Binge"><img src="assets/providers/binge.svg" alt="" width="48" height="48"></a>
-            <a class="service service-logo" data-service="Stan" href="https://www.stan.com.au/" target="_blank" rel="noopener noreferrer" aria-label="Filter by Stan and open Stan" title="Stan"><img src="assets/providers/stan.svg" alt="" width="48" height="48"></a>
-            <a class="service service-logo" data-service="Apple TV+" href="https://tv.apple.com/au/" target="_blank" rel="noopener noreferrer" aria-label="Filter by Apple TV Plus and open Apple TV Plus" title="Apple TV+"><img src="assets/providers/apple-tv-plus.svg" alt="" width="48" height="48"></a>
+          <div class="service-groups" aria-label="Streaming services">
+            <section class="service-group-block" aria-labelledby="freeTvServicesHeading">
+              <div class="service-group-heading">
+                <div><strong id="freeTvServicesHeading">Free TV</strong><small>Australian free-to-air &amp; catch-up</small></div>
+              </div>
+              <div class="service-grid service-grid-free">
+                <button class="service service-card service-free-tv" data-service="Free TV" type="button" aria-label="Show all free Australian streaming services"><span class="service-icon-frame service-icon-free" aria-hidden="true">FREE</span><strong>All Free TV</strong></button>
+                <button class="service service-card service-free-tv" data-service="ABC iview" type="button" aria-label="Filter by ABC iview"><span class="service-icon-frame"><img src="assets/providers/official/abc-iview.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>ABC iview</strong></button>
+                <button class="service service-card service-free-tv" data-service="7plus" type="button" aria-label="Filter by 7plus"><span class="service-icon-frame"><img src="assets/providers/official/7plus.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>7plus</strong></button>
+                <button class="service service-card service-free-tv" data-service="9Now" type="button" aria-label="Filter by 9Now"><span class="service-icon-frame"><img src="assets/providers/official/9now.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>9Now</strong></button>
+                <button class="service service-card service-free-tv" data-service="SBS On Demand" type="button" aria-label="Filter by SBS On Demand"><span class="service-icon-frame"><img src="assets/providers/official/sbs-on-demand.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>SBS On Demand</strong></button>
+                <button class="service service-card service-free-tv" data-service="10" type="button" aria-label="Filter by 10"><span class="service-icon-frame"><img src="assets/providers/official/10.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>10</strong></button>
+              </div>
+            </section>
+
+            <section class="service-group-block" aria-labelledby="subscriptionServicesHeading">
+              <div class="service-group-heading">
+                <div><strong id="subscriptionServicesHeading">Streaming</strong><small>Subscription services</small></div>
+              </div>
+              <div class="service-grid service-grid-paid">
+                <button class="service service-card service-all active" data-service="All" type="button" aria-label="Show all services"><span class="service-icon-frame service-icon-all" aria-hidden="true">✦</span><strong>All Services</strong></button>
+                <button class="service service-card" data-service="Netflix" type="button" aria-label="Filter by Netflix"><span class="service-icon-frame"><img src="assets/providers/official/netflix.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>Netflix</strong></button>
+                <button class="service service-card" data-service="Disney+" type="button" aria-label="Filter by Disney+"><span class="service-icon-frame"><img src="assets/providers/official/disney-plus.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>Disney+</strong></button>
+                <button class="service service-card" data-service="Prime Video" type="button" aria-label="Filter by Prime Video"><span class="service-icon-frame"><img src="assets/providers/official/prime-video.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>Prime Video</strong></button>
+                <button class="service service-card" data-service="Binge" type="button" aria-label="Filter by Binge"><span class="service-icon-frame"><img src="assets/providers/official/binge.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>Binge</strong></button>
+                <button class="service service-card" data-service="Stan" type="button" aria-label="Filter by Stan"><span class="service-icon-frame"><img src="assets/providers/official/stan.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>Stan</strong></button>
+                <button class="service service-card" data-service="Apple TV+" type="button" aria-label="Filter by Apple TV+"><span class="service-icon-frame"><img src="assets/providers/official/apple-tv-plus.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><strong>Apple TV+</strong></button>
+              </div>
+            </section>
           </div>
           <div class="free-tv-launcher" aria-label="Australian free-to-air live and catch-up services">
             <span>Live &amp; catch-up</span>

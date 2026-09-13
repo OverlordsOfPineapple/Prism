@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Barlow:400,500&display=swap" rel="stylesheet">
+    <style>
+    .iserror {
+  font-family: "Barlow", sans-serif;
+  max-width: 860px;
+  margin: auto;
+}
+
+.iserror__img {
+  display: flex;
+  justify-content: center;
+}
+.iserror__text,
+.iserror__title {
+  text-align: center;
+}
+
+.iserror__title {
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1882f8;
+}
+
+.iserror__text {
+  font-size: 15;
+  font-weight: 500;
+  line-break: 1.56;
+  color: #8994a4;
+}
+
+.iserror__link {
+  text-decoration: underline;
+  color: #000;
+}
+
+    </style>
+    <title>Watch full episodes of TV shows for free on 10 play - Network Ten</title>
+  </head>
+  <body>
+    <div class="iserror">
+      <figure class="iserror__img">
+        <img
+          src="https://10.com.au/ip/s3/prod/error_1x.gif"
+          alt="error page gif"
+        />
+      </figure>
+      <h2 class="iserror__title">500 &#10088;aka &apos;Huh?&apos;&#10089;</h2>
+      <p class="iserror__text">
+        there&apos;s no easy way to say this...
+      </p>
+      <p class="iserror__text">
+        Sorry, 10 play is not available in your region.
+      </p>
+    </div>
+  </body>
+</html>
