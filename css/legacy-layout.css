@@ -137,3 +137,30 @@
 .free-tv-launcher a:focus-visible {
   transform: translateY(-1px);
 }
+
+
+/* Prism performance pass */
+@supports (content-visibility: auto) {
+  .row-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 460px;
+  }
+  .detail-section,
+  .similar-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 360px;
+  }
+}
+@media (max-width: 900px) {
+  .hero-media {
+    animation: none;
+    transform: none;
+  }
+  .topbar.scrolled,
+  .search-panel,
+  .discovery-toggle,
+  .discovery-panel,
+  .secondary-btn {
+    backdrop-filter: none;
+  }
+}
