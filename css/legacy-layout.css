@@ -251,3 +251,96 @@
 @media (max-width:430px){
   .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+
+/* Prism anti-squish spacing pass */
+.discovery-controls{
+  margin:30px 5vw 38px;
+}
+.discovery-panel{
+  padding:22px;
+}
+.content-rows{
+  padding-bottom:132px;
+}
+.row-section{
+  margin:40px 0 66px;
+}
+.row-header{
+  padding:0 5vw 20px;
+}
+.row-header h2{
+  font-size:clamp(1.45rem,2.2vw,2rem);
+}
+.row-scroll{
+  grid-auto-columns:clamp(220px,18vw,280px);
+  gap:18px;
+  padding:0 5vw 28px;
+}
+
+/* Keep provider choices compact without crushing them into one long row. */
+.service-groups-right{
+  width:min(620px,100%);
+  margin-left:auto;
+  gap:20px;
+}
+.service-grid{
+  grid-template-columns:repeat(4,minmax(120px,1fr));
+  gap:11px;
+}
+.service-grid .service-card{
+  min-height:112px;
+  padding:11px 10px;
+}
+.free-tv-launcher{
+  width:min(620px,100%);
+  margin-left:auto;
+  justify-content:flex-end;
+  gap:8px;
+}
+
+@media (max-width:900px){
+  .row-scroll{
+    grid-auto-columns:clamp(210px,31vw,250px);
+  }
+  .service-groups-right,
+  .free-tv-launcher{
+    width:100%;
+  }
+  .service-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+@media (max-width:600px){
+  .discovery-controls{
+    margin:20px 4vw 28px;
+  }
+  .discovery-panel{
+    padding:16px;
+  }
+  .row-section{
+    margin:30px 0 50px;
+  }
+  .row-header{
+    padding:0 4vw 16px;
+  }
+  .row-scroll{
+    grid-auto-columns:minmax(190px,62vw);
+    gap:14px;
+    padding:0 4vw 22px;
+  }
+  .service-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .service-grid .service-card{
+    min-height:104px;
+  }
+  .service-group-heading{
+    justify-content:flex-start;
+    text-align:left;
+  }
+  .free-tv-launcher{
+    justify-content:flex-start;
+  }
+}
